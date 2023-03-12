@@ -18,8 +18,10 @@ const server = http.createServer((req, res) => {
       email: "petterson@email.com",
     });
 
-    return res.end("Usuário criado");
+    return res.writeHead(201).end("Usuário criado");
   }
+
+  return res.writeHead(404).end("Route not found!");
 });
 
 server.listen(3333);
